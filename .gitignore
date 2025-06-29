@@ -1,0 +1,15 @@
+env
+media
+static
+
+.env
+
+
+# Help Files for development
+
+buildDocker.bat
+docker-compose.dev.yml
+runtime-control.bat
+runtime-only.docker-compose.yml
+startDocker.bat
+startWorker1.sh
