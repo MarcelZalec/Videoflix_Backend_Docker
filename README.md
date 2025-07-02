@@ -9,17 +9,16 @@ Welcome to the **Videoflix Backend** — a modern video platform powered by Djan
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/MarcelZalec/Videoflix_Backend.git
-   cd Videoflix_Backend
+   git clone https://github.com/MarcelZalec/Videoflix_Backend_Docker.git
+   cd Videoflix_Backend_Docker
 
 
-2. **Start the Docker Container**
-    <code>docker-compose up --build</code>
-    This setup:
-
-    Automatically creates a .env file from .env_template (if not already present)
-    Runs migrations
-    Launches the server at http://localhost:8000/
+2. **Start the Docker Container**<br>
+    <code>docker-compose up --build</code><br>
+    This setup:<br><br>
+    Automatically creates a .env file from .env_template (if not already present)<br>
+    Runs migrations<br>
+    Launches the server at http://localhost:8000/<br>
 
 ## **Set up `.env` file**
    Define the required environment variables in your `.env` file to enable registration and password reset email functionality:
