@@ -14,7 +14,9 @@ Welcome to the **Videoflix Backend** — a modern video platform powered by Djan
 
 
 2. **Start the Docker Container**<br>
-    <code>docker-compose up --build</code><br>
+    ```bash
+    docker-compose up --build
+    ```
     This setup:<br><br>
     Automatically creates a .env file from .env_template (if not already present)<br>
     Runs migrations<br>
