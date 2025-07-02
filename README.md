@@ -13,7 +13,15 @@ Welcome to the **Videoflix Backend** — a modern video platform powered by Djan
    cd Videoflix_Backend_Docker
 
 
-2. **Start the Docker Container**<br>
+2. **Create .env file from .env_template**
+    ```bash
+    cp .env_template .env
+    ```
+
+    Before proceeding, make sure to [set up your `.env` file](#setup) by following the instructions below.
+
+
+3. **Start the Docker Container**<br>
     ```bash
     docker-compose up --build
     ```
@@ -22,6 +30,7 @@ Welcome to the **Videoflix Backend** — a modern video platform powered by Djan
     Runs migrations<br>
     Launches the server at http://localhost:8000/<br>
 
+<a name="setup"></a>
 ## **Set up `.env` file**
    Define the required environment variables in your `.env` file to enable registration and password reset email functionality:
 
