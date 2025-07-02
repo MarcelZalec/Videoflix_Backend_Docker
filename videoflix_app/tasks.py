@@ -1,6 +1,7 @@
 import subprocess
 import os
 from core import settings
+from pathlib import Path
 
 ffmpeg_path = r'/usr/bin/ffmpeg'
 RESOLUTIONS = {
@@ -178,9 +179,14 @@ def process_video(inst):
     
     if inst.video_file:
         if thumbnail_path:
-            inst.thumbnail = str(thumbnail_path).replace(str(settings.MEDIA_ROOT), '')
+            relative_path = Path(thumbnail_path).relative_to(settings.MEDIA_ROOT)
+            inst.thumbnail = relative_path.as_posix()
         inst.save()
-        if inst.video_file.path.endswith('.mp4'):
-            if os.path.isfile(inst.video_file.path):
-                os.remove(inst.video_file.path) # Remove the original video file after processing
-        
+        try:
+            if inst.video_file.path.lower().endswith('.mp4') and os.path.isfile(inst.video_file.path):
+                os.remove(inst.video_file.path)
+                print("Datei erfolgreich gelöscht.")
+            else:
+                print("Datei nicht gefunden oder kein .mp4")
+        except Exception as e:
+            print("Fehler beim Löschen:", e)

@@ -31,6 +31,7 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
     """
     folder_path = os.path.dirname(instance.video_file.path)
     clear_folder_path = os.path.splitext(instance.video_file.path)[0]
+    thumbnail = instance.thumbnail
     if os.path.exists(folder_path):
         resolution = ['240p', '360p', '480p', '720p', '1080p']
         for res in resolution:
@@ -40,3 +41,9 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
                     shutil.rmtree(file_path)
                 except Exception as e:
                     logger.error(f"Error removing file {file_path}: {e}")
+
+    if thumbnail and hasattr(thumbnail, 'path'):
+        try:
+            os.remove(thumbnail.path)
+        except FileNotFoundError:
+            pass

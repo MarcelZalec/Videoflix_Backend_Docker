@@ -13,3 +13,13 @@ runtime-control.bat
 runtime-only.docker-compose.yml
 startDocker.bat
 startWorker1.sh
+tasks_2.py
+up.bat
+
+# caches and migration files
+**/__pycache__/**
+!**/__pycache__
+!**/__pycache__/__init__.cpython-312.pyc
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
