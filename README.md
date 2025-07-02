@@ -1,43 +1,25 @@
-# Videoflix
-![Logo](Logo.svg)
+# 🎬 Videoflix Backend
 
-## Overview  
-**Videoflix** is a feature-rich Netflix clone designed with a modern web stack.
-
-- **Frontend:** Built using [Angular 19](https://github.com/MarcelZalec/videoflix_frontend)  
-- **Backend:** Developed with [Django REST Framework](https://github.com/MarcelZalec/Videoflix_Backend)
+Welcome to the **Videoflix Backend** — a modern video platform powered by Django. This setup includes a full Docker configuration, environment variable management, and is ready for local development or production scaling.
 
 ---
 
-## Backend Setup
+## 🚀 Quick Start (with Docker)
 
-1. **Clone the repository**  
+1. **Clone the repository**
+
    ```bash
    git clone https://github.com/MarcelZalec/Videoflix_Backend.git
-   cd Videoflix-Backend
+   cd Videoflix_Backend
 
-2. **Create a virtual environment:**  
-   ```bash
-   python -m venv env
-   source env/bin/activate       # Linux / macOS
-   env\Scripts\activate          # Windows
 
-3. **Install dependencies:**  
-   ```bash
-   pip install -r requirements.txt
+2. **Start the Docker Container**
+    <code>docker-compose up --build</code>
+    This setup:
 
-4. **Make migrations**  
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-
-5. **Create a env file from .env_template**  
-   ```bash
-   cp .env_template .env
-
-6. **Start Backend with**  
-   ```bash
-   python3 manage.py runserver
+    Automatically creates a .env file from .env_template (if not already present)
+    Runs migrations
+    Launches the server at http://localhost:8000/
 
 ## **Set up `.env` file**
    Define the required environment variables in your `.env` file to enable registration and password reset email functionality:
